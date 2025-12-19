@@ -24,5 +24,4 @@ form.addEventListener("submit",(e)=>{
         }
     }
     result.innerHTML = JSON.stringify(userData)
-    
 })
