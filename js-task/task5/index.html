@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../working with tailwind/src/output.css">
+</head>
+<body>
+    <div class="p-6 flex bg-amber-200 h-52 w-2xl">
+        <div class="border-amber-300">
+            <label for="">Carname</label>
+            <input type="text" id="carname">
+        </div>
+        <div class="formgroup">
+            <label for="">Company</label>
+            <input type="text" id="company">
+        </div>
+        <div class="formgroup">
+            <label for="">Price</label>
+            <input type="text" id="price">
+        </div>
+        <div class="formgroup btngroup">
+            <input type="button" value="Add" id="add">
+        </div>  
+    </div>
+    <br><br><br>
+    <div id="carobj" class="formgroup">
+        <table id="table" border="1">
+            <thead>
+                <tr><td>id</td><td>carname</td><td>company</td><td>price</td></tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+        </table>
+    </div>
+    <p id="p"></p>
+    <script src="script.js"></script>
+</body>
+</html>

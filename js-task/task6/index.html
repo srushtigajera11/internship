@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="">
+    <div class="formcontrol">
+        <label for="">Carname</label>
+        <input type="text" id="txtcar">
+    </div>
+    <div class="formcontrol">
+        <label for="">Price</label>
+        <input type="text" id="txtprice">
+    </div>
+  <div class="formcontrol btngroup">
+    <p id="presult"></p>
+
+    <input type="button" value="Save" id="btnadd">
+    <input type="button" value="cancel" id="btncancel">
+    <input type="number" id="txtindex" style="visibility: hidden;">
+    <label>$2000</label>
+    <input type="range" min="5000000" max="9000000" value="9000000" id="txtsearch">
+    <label>$200000/-</label>
+</div>
+
+   
+    <table class="formcontrol">
+        <thead>
+            <tr><th>Name</th> <th>Price</th>
+            <th>Edit</th>
+        <th>Delete</th></tr>
+        </thead>
+        <tbody id="tbdy">
+
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
