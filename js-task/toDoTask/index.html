@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HAVE GREAT DAY!!</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100">
+    <div class="max-w-md mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">
+            TO DO LIST
+        </h1>
+
+        <div class="mt-6">
+            <input  type="text" id="taskInput"   placeholder="Enter a new task" class="border border-gray-300 rounded px-2 py-1 mr-2">
+            <input type="date" id="dueDate" placeholder="Due Date" class="border border-gray-300 rounded  mt-2 px-2 py-1 mr-2">
+            <div class="flex mt-4 items-center">
+            <input type="radio" id="priorityLow" name="priority" value="Low" class="mr-1"> LOW
+            <input type="radio" id="priorityMedium" name="priority" value="Medium" class="ml-7 mr-1"> MEDIUM
+            <input type="radio" id="priorityHigh" name="priority" value="High" class="ml-7 mr-1"> HIGH
+            </div>
+            <button  id="addTaskButton" class="bg-blue-500 text-white px-4 py-1 rounded mt-6">Add Task</button>
+        </div>
+        <div class="mt-9 p-5 bg-blue-200 rounded" >
+            <ul id="taskList">
+                <!-- Tasks will be added here dynamically -->
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+    </html>
