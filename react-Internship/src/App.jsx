@@ -1,20 +1,13 @@
 
 import './reactCSS.css'
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import Sidebar from "./components/Sidebar"
-import Container from './components/Container'
+import E2home from './components/eg2/E2home'
+import PropsHome from './components/propsTask/PropsHome'
 
 function App() {
   return (
     <>
-      <Header/>
-      <div className=' h-[80vh] flex justify-between '>
-       <Sidebar />
-       <Container />
-       <Sidebar />
-      </div>
-      <Footer />
+    <E2home />
+     <PropsHome />
     </>
   )
 }
