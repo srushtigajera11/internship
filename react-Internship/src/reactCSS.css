@@ -13,6 +13,7 @@
     --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-green-300: oklch(87.1% 0.15 154.449);
+    --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-800: oklch(42.4% 0.199 265.638);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -185,11 +186,17 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
   .h-\[10vh\] {
     height: 10vh;
   }
   .h-\[80vh\] {
     height: 80vh;
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
   }
   .w-60 {
     width: calc(var(--spacing) * 60);
@@ -230,6 +237,9 @@
   }
   .bg-amber-200 {
     background-color: var(--color-amber-200);
+  }
+  .bg-blue-300 {
+    background-color: var(--color-blue-300);
   }
   .bg-green-300 {
     background-color: var(--color-green-300);
