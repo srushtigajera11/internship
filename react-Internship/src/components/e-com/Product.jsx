@@ -1,23 +1,26 @@
 import React from 'react'
-import { productsary } from './data'
+import { productsary } from './productData'
 import { useParams } from 'react-router-dom'
-export default function Product() {
+import { Link } from 'react-router-dom'
+export default function Products() {
     let params = useParams()
     let cname = params.cname
-    let obj = productsary.find((i)=>i.category == cname)
-    let product = obj.items
-    let ui = product.map((p)=>{
-        return <div className='w-1/4 flex justify-center items-center text-center flex-col' key={p.id}>
-            <img className='w-4/5 aspect-square' src={p.imgurl} alt="" />
-            <div className='text-lg'>{p.name}</div>
-            <div>{p.price}</div>
-            <Link to={'/productD'+p.id}></Link>
+    let products = productsary.filter((e)=>e.category == cname)
+    let ui = products.map((p)=>
+    {
+      return  <div key= {p.id} className='w-1/4 flex justify-center items-center text-center flex-col'>
+        <Link to={'/productDetails/'+p.id}>
+        <img src={p.thumbnail} alt="" />
+        <div>{p.title}</div>
+        <div>{p.price}</div>
+        </Link>
         </div>
     })
   return (
-    <div>
-           <div className='flex gap-4 flex-wrap justify-center'></div>
-      {ui}
-    </div>
+    <div > <p className='text-center text-3xl m-5  font-extrabold font-serif text-slate-900 '>{cname}</p>
+    <br />
+    <div className='flex gap-4 flex-wrap justify-center'>
+        {ui}
+        </div></div>
   )
 }

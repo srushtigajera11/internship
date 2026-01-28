@@ -10,23 +10,27 @@ import Home from './components/hooks/Home';
 import Categories from './components/e-com/Categories';
 import Product from './components/e-com/Product';
 import ProductDetails from './components/e-com/ProductDetails';
+import Navbar from './components/e-com/Navbar';
+import Footer from './components/e-com/Footer';
 
 
 
 function App() {
   return (
     <>
+    <Navbar />  
+
     <Routes>
-      <Route path='/' element={<State/>}></Route>
-      <Route path='/ref' element={<UseRef/>}></Route>
-      <Route path="/home" element={<Home/>}></Route>
-      <Route path='/c' element={<Categories />}></Route>
+    
+
+      <Route path='/' element={<Categories />}></Route>
       <Route path='/product/:cname' element={<Product />}></Route>
-       <Route path='/product/:id' element={<ProductDetails />}></Route>
+       <Route path='/productDetails/:id' element={<ProductDetails />}></Route>
     </Routes>
     {/* {/* <E2home />
      <PropsHome /> 
      <MapHome /> */}
+     <Footer />
     </>
 
   )
