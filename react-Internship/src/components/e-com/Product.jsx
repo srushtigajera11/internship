@@ -11,6 +11,7 @@ export default function Product() {
             <img className='w-4/5 aspect-square' src={p.imgurl} alt="" />
             <div className='text-lg'>{p.name}</div>
             <div>{p.price}</div>
+            <Link to={'/productD'+p.id}></Link>
         </div>
     })
   return (

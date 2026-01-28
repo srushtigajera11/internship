@@ -9,6 +9,7 @@ import UseRef from './components/hooks/UseRef';
 import Home from './components/hooks/Home';
 import Categories from './components/e-com/Categories';
 import Product from './components/e-com/Product';
+import ProductDetails from './components/e-com/ProductDetails';
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Route path="/home" element={<Home/>}></Route>
       <Route path='/c' element={<Categories />}></Route>
       <Route path='/product/:cname' element={<Product />}></Route>
+       <Route path='/product/:id' element={<ProductDetails />}></Route>
     </Routes>
     {/* {/* <E2home />
      <PropsHome /> 
