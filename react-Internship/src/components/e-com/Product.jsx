@@ -12,7 +12,7 @@ export default function Products() {
         <Link to={'/productDetails/'+p.id}>
         <img src={p.thumbnail} alt="" />
         <div>{p.title}</div>
-        <div>{p.price}</div>
+        <div>${p.price}</div>
         </Link>
         </div>
     })

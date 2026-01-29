@@ -42,7 +42,7 @@ export default function ProductDetails() {
           </p>
 
           <p className="text-xl font-bold text-slate-900">
-            ₹{product.price}
+            ${product.price}
           </p>
 
           <button className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg">
