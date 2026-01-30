@@ -20,7 +20,7 @@ import AllProducts from './components/e-com/AllProducts';
 function App() {
   const location = useLocation();
   const currentPath = location.pathname
-  let leftUi = currentPath == '/' ? <img className='w-full h-[60vh]' src={imga}  alt="" />  : <Categories direction="bottom"></Categories>
+  let leftUi = currentPath == '/' ? <img className='w-full h-[60vh] rounded-lg' src={imga}  alt="" />  : <Categories direction="bottom"></Categories>
   return (
     <>
     
