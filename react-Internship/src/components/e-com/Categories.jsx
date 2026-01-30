@@ -1,31 +1,76 @@
-import React from 'react'
-import { productsary } from './productData'
-import { Link } from 'react-router-dom'
-export default function Categories() {
-      let categories= [];
-  productsary.map((p)=>
-  {
-    if(categories.findIndex((e)=>e.cname==p.category)==-1)
-    {
-    categories.push({cname:p.category, image:p.thumbnail})
-    }
-  })
-   
-    let ui = categories.map((c)=>{
-      return <div className='flex flex-col justify-center text-center' >
-        <Link to={'product/'+c.cname}>
-        <img src={c.image} alt="" />
-        <div className=' text-slate-900 text-base font-semibold line-clamp-2'>{c.cname}</div>
-        </Link>
-      </div>
+import React from "react";
+import { productsary } from "./productData";
+import { Link } from "react-router-dom";
 
-    })
+export default function Categories(props) {
+  const direction = props.direction;
+
+  // Unique categories
+  const categories = [
+    ...new Map(
+      productsary.map((p) => [
+        p.category,
+        { cname: p.category, image: p.thumbnail },
+      ])
+    ).values(),
+  ];
+
+  // 👉 SIDEBAR STYLE (bottom)
+  if (direction === "bottom") {
+    return (
+      <div>
+        <p className="text-center text-2xl font-bold my-4">Categories</p>
+
+        <div className="flex flex-col gap-3 px-4">
+          {categories.map((c, i) => (
+            <Link
+              key={i}
+              to={"/product/" + c.cname}
+              className="bg-white p-3 rounded-lg shadow hover:bg-sky-50 hover:text-sky-600 transition text-center font-medium capitalize"
+            >
+              {c.cname}
+            </Link>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // 👉 AMAZON CARD GRID (right)
   return (
-    <div>
-      <p className='text-center text-3xl m-5  font-extrabold font-serif text-slate-900 '>Categories</p>
-    <div className='flex flex-wrap gap-4 justify-center'>
-        {ui}
+    <div className="px-6 py-8">
+
+      <p className="text-center text-3xl font-bold mb-8">
+        Shop by Category
+      </p>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        {categories.map((c, i) => (
+          <Link
+            key={i}
+            to={"/product/" + c.cname}
+            className="bg-white rounded-xl shadow hover:shadow-lg transition p-4 group"
+          >
+
+            {/* Image */}
+            <div className="h-36 flex justify-center items-center overflow-hidden">
+              <img
+                src={c.image}
+                alt=""
+                className="h-full object-contain group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
+            {/* Title */}
+            <p className="text-center font-semibold mt-4 capitalize text-gray-800 group-hover:text-sky-600">
+              {c.cname}
+            </p>
+
+          </Link>
+        ))}
+
       </div>
     </div>
-  )
+  );
 }

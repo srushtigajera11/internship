@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link to={"/"}> Categories</Link>
           </div>
             <div className="hover:text-sky-400 transition">
-           Products
+              <Link to={"/allProducts"}>Products</Link>
           </div>
 
           <button className="relative hover:text-sky-400 transition">

@@ -1,26 +1,60 @@
-import React from 'react'
-import { productsary } from './productData'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { productsary } from "./productData";
+import { useParams, Link } from "react-router-dom";
+
 export default function Products() {
-    let params = useParams()
-    let cname = params.cname
-    let products = productsary.filter((e)=>e.category == cname)
-    let ui = products.map((p)=>
-    {
-      return  <div key= {p.id} className='w-1/4 flex justify-center items-center text-center flex-col'>
-        <Link to={'/productDetails/'+p.id}>
-        <img src={p.thumbnail} alt="" />
-        <div>{p.title}</div>
-        <div>${p.price}</div>
-        </Link>
-        </div>
-    })
+  const { cname } = useParams();
+
+  const products = productsary.filter(
+    (e) => e.category === cname
+  );
+
   return (
-    <div > <p className='text-center text-3xl m-5  font-extrabold font-serif text-slate-900 '>{cname}</p>
-    <br />
-    <div className='flex gap-4 flex-wrap justify-center'>
-        {ui}
-        </div></div>
-  )
+    <div className="px-6 py-8">
+
+      {/* Heading */}
+      <h2 className="text-3xl font-bold text-center mb-8 capitalize">
+        {cname}
+      </h2>
+
+      {/* Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        {products.map((p) => (
+          <Link
+            key={p.id}
+            to={"/productDetails/" + p.id}
+            className="bg-white rounded-xl shadow hover:shadow-lg transition p-4 group"
+          >
+
+            {/* Image */}
+            <div className="h-44 flex justify-center items-center overflow-hidden">
+              <img
+                src={p.thumbnail}
+                alt=""
+                className="h-full object-contain group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
+            {/* Title */}
+            <p className="mt-3 font-semibold text-gray-800 line-clamp-2 group-hover:text-sky-600">
+              {p.title}
+            </p>
+
+            {/* Price */}
+            <p className="text-green-600 font-bold text-lg mt-2">
+              ${p.price}
+            </p>
+
+            {/* Rating */}
+            <div className="text-yellow-400 text-sm mt-1">
+              ⭐ {p.rating}
+            </div>
+
+          </Link>
+        ))}
+
+      </div>
+    </div>
+  );
 }
